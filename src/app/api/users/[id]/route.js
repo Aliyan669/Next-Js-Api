@@ -9,3 +9,16 @@ export function GET(request, content) {
         userData.length == 0 ? { result: "No Data Found", success: false } : { result: userData[0], success: true },
         { status: 200 })
 }
+
+///////////// Ye Put Method ki api hai data Update karna ke liya /////////
+
+export async function PUT(request, content) {
+    let payload = await request.json();
+    payload.id = content.params.id;
+    console.log(payload)
+    if (!payload.name || !payload.age || !payload.city) {
+        return NextResponse.json({ result: "Request data is not valid", success: false }, { status: 400 });
+
+    }
+    return NextResponse.json({ result: payload, success: true }, { status: 201 });
+}   
