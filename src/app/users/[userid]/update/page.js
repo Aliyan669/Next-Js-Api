@@ -36,7 +36,7 @@ export default function page({ params }) {
     return (
         <div>
             <h1>
-                Update User Detail
+                Update User Details
             </h1>
             <input type="text" value={name} placeholder="Enter Name" onChange={(e) => setName(e.target.value)} className="input-field" />
             <input type="text" value={age} placeholder="Enter Age" onChange={(e) => setAge(e.target.value)} className="input-field" />
