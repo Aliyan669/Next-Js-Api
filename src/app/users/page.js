@@ -17,6 +17,7 @@ export default async function page() {
         users.map((e) => (
           <div>
             <Link href={`users/${e.id}`} >{e.name}</Link>
+            <span style={{ marginLeft: "50px" }}><Link href={`users/${e.id}/update`}>Edit</Link></span>
           </div>
         ))
       }
