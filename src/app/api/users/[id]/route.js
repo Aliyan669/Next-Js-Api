@@ -21,4 +21,16 @@ export async function PUT(request, content) {
 
     }
     return NextResponse.json({ result: payload, success: true }, { status: 201 });
-}   
+}
+
+
+///////////// Ye Delete Method ki api hai data Delete karna ke liya /////////
+
+export function DELETE(request, content) {
+    let id = content.params.id
+    if (id) {
+        return NextResponse.json({ result: "User Deleted", success: true }, { status: 200 })
+    } else {
+        return NextResponse.json({ result: "Internal error please try after sometime", success: false }, { status: 400 })
+    }
+}

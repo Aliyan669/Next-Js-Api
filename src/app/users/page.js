@@ -1,3 +1,4 @@
+import DeleteUser from "@/utility/deleteUser";
 import Link from "next/link";
 
 async function getUsers() {
@@ -18,6 +19,7 @@ export default async function page() {
           <div>
             <Link href={`users/${e.id}`} >{e.name}</Link>
             <span style={{ marginLeft: "50px" }}><Link href={`users/${e.id}/update`}>Edit</Link></span>
+            <sapn>   <DeleteUser id={e.id} /></sapn>
           </div>
         ))
       }
