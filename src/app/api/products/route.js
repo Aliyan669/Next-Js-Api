@@ -7,15 +7,17 @@ export async function GET() {
 
     // await mongoose.connect(connectionSrt);
     // const data = await Product.find()
-    let data = []
+    let data = [];
+    let success = true;
     try {
         await mongoose.connect(connectionSrt);
         data = await Product.find()
 
     } catch (error) {
-        data = { success: false }
+        data = { result: "error" }
+        success = false
     }
-    return NextResponse.json({ result: data, success: true })
+    return NextResponse.json({ result: data, success})
 
 }
 
