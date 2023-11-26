@@ -1,7 +1,11 @@
+import DeleteProduct from '@/lib/DeleteProduct';
+import Link from 'next/link';
 import React from 'react'
 
+// Ye Product Get Karna ka Method Hai
+
 const getProduct = async () => {
-  let data = await fetch("http://localhost:3000/api/products");
+  let data = await fetch("http://localhost:3000/api/products", { cache: "no-cache" });
   data = await data.json();
   if (data.success) {
     return data.result;
@@ -39,7 +43,9 @@ export default async function page() {
                 <td>{e.company}</td>
                 <td>{e.category}</td>
                 <td>{e.color}</td>
-
+                <td><Link href={"product/" + e._id}>Edit</Link>
+                  <DeleteProduct id={e._id} />
+                </td>
               </tr>
             ))
           }

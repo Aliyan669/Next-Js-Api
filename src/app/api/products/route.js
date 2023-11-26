@@ -17,7 +17,7 @@ export async function GET() {
         data = { result: "error" }
         success = false
     }
-    return NextResponse.json({ result: data, success})
+    return NextResponse.json({ result: data, success })
 
 }
 
